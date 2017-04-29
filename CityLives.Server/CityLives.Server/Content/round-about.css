@@ -1,0 +1,48 @@
+﻿/*!
+ * Start Bootstrap - Round About (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.sensor {
+}
+
+    .sensor .circle {
+        cursor: pointer;
+    }
+
+    .sensor h3 {
+        cursor: pointer;
+    }
+
+.circle {
+    background: inherit;
+    border-radius: 50%;
+    border: 2px solid #1bb99a;
+    height: 130px;
+    font-weight: bold;
+    width: 130px;
+    display: table;
+    margin: 20px auto;
+}
+
+    .circle h2 {
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+.circle-detail {
+    margin: 0px;
+}
