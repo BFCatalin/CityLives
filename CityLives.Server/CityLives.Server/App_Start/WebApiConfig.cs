@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 
 namespace CityLives.Server
@@ -13,12 +16,24 @@ namespace CityLives.Server
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.Formatters.Clear();
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            config.Formatters.Add(new JsonMediaTypeFormatter());
+            config.Formatters.JsonFormatter.SerializerSettings =
+            new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                {
+                    IgnoreSerializableAttribute = true
+                },
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                DateFormatString = "yyyy-MM-dd"
+            };
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
         }
     }
 }

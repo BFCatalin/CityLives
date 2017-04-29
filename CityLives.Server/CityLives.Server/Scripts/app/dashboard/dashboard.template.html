@@ -1,0 +1,29 @@
+﻿ <!-- Introduction Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            City lives
+            <small>Smart city living</small>
+        </h1>
+        <p>Let your city live through you. Working together, we can make our urban environments lovely and healthy places.</p>
+    </div>
+</div>
+
+<!-- Sensors Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Sensors</h2>
+    </div>
+    <div class="col-lg-4 col-sm-6 text-center sensor" ng-repeat="sensor in dashboard.sensors">
+        <div class="circle" ng-click="viewSensor(sensor)">
+            <h2 ng-bind-html="getSensorMeasureUnit(sensor.id)" ng-if="!showSensorMinMax(sensor)"></h2>
+            <h5 ng-if="showSensorMinMax(sensor)">
+                {{ sensor.maxValue }}<span ng-bind-html="getSensorMeasureUnit(sensor.id)"></span>
+                <hr />
+                {{ sensor.minValue }}<span ng-bind-html="getSensorMeasureUnit(sensor.id)"></span>
+            </h5>
+        </div>
+        <h3 ng-click="viewSensor(sensor)">{{ sensor.sensorName }}</h3>
+        <p>{{ sensor.description }}</p>
+    </div>
+</div>

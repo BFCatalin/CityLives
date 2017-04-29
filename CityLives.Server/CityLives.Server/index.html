@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="CityLives">
 
 <head>
 
@@ -13,7 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="content/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <!-- Custom CSS -->
     <link href="content/round-about.css" rel="stylesheet">
 
@@ -23,6 +23,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <base href="/">
 
 </head>
 
@@ -59,77 +60,7 @@
 
     <!-- Page Content -->
     <div class="container">
-
-        <!-- Introduction Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    City lives
-                    <small>Smart city living</small>
-                </h1>
-                <p>Let your city live through you. Working together, we can make our urban environments lovely and healthy places.</p>
-            </div>
-        </div>
-
-        <!-- Sensors Row -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Sensors</h2>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center sensor">
-                <div class="circle">
-                    <h2><sup>o</sup>C</h2>
-                </div>
-                <h3>Temperature</h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center sensor">
-                <div class="circle">
-                    <h2>CO<sub>2</sub></h2>
-                </div>
-                <h3>
-                    Air quality
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center sensor">
-                <div class="circle">
-                    <h2>UV</h2>
-                </div>
-                <h3>
-                    UV
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center sensor">
-                <div class="circle">
-                    <h2>dBA</h2>
-                </div>
-                <h3>
-                    Noise
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <div class="circle">
-                    <h2>kPa</h2>
-                </div>
-                <h3>
-                    Atmospheric pressure
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center sensor">
-                <div class="circle">
-                    <h2>L/m<sup>2</sup></h2>
-                </div>
-                <h3>
-                    Precipitation
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-        </div>
-
+        <div ng-view></div>
         <hr>
 
         <!-- Footer -->
@@ -147,10 +78,38 @@
     <!-- /.container -->
     <!-- jQuery -->
     <script src="scripts/jquery-1.9.0.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/app.js"></script>
+    <script src="scripts/bootstrap.min.js"></script> <!-- AngularJS -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="scripts/angular-resource.js"></script>
+    <script src="scripts/angular-sanitize.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-morris/1.3.0/angular-morris.min.js"></script>
+
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/app.module.js"></script>
+    <script src="scripts/app/app.config.js"></script>
+    <script src="scripts/app/core/core.module.js"></script>
+
+    <script src="scripts/app/core/dashboard/dashboard.module.js"></script>
+    <script src="scripts/app/core/dashboard/dashboard.service.js"></script>
+    <script src="scripts/app/core/device/device.module.js"></script>
+    <script src="scripts/app/core/device/device.service.js"></script>
+    <script src="scripts/app/core/sensor/sensor.module.js"></script>
+    <script src="scripts/app/core/sensor/sensor.service.js"></script>
+    <script src="scripts/app/dashboard/dashboard.module.js"></script>
+    <script src="scripts/app/dashboard/dashboard.component.js"></script>
+    <script src="scripts/app/device/device.module.js"></script>
+    <script src="scripts/app/device/device-detail.component.js"></script>
+    <script src="scripts/app/sensor/sensor.module.js"></script>
+    <script src="scripts/app/sensor/sensor.component.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzZ-6ej2eh6qlvzhEfmaTHkkrYdie02Qs&callback=initMap">
+    </script>
 </body>
 
 </html>
