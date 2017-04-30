@@ -35,10 +35,14 @@
               return sensor.minValue != 0 && sensor.minValue != 0;
           }
 
+          $scope.$watch('sensor', function (oldValue, newValue) {
+              $(function () {
 
-          map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 13,
-              center: { lat: 46.7665509, lng: 23.5912164 }
+                  map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 13,
+                      center: { lat: 46.7665509, lng: 23.5912164 }
+                  });
+              });
           });
       }
   })
